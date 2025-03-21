@@ -1,0 +1,3 @@
+// mainwindow.h
+#define ID_MYBUTTON 1
+LRESULT CALLBACK MainWinProc(HWND, UINT, WPARAM, LPARAM);
