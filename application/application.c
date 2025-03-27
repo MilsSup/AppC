@@ -1,9 +1,10 @@
 #include <windows.h>
 #include "mainwindow.h"
+HINSTANCE h;
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hpi, LPSTR cmdline, int ss) {
-    (void)hpi;      // Помечаем параметр как неиспользуемый
-    (void)cmdline;  // Помечаем параметр как неиспользуемый
+    (void)hpi;
+    (void)cmdline; 
 	WNDCLASS wc;
 	wc.style=0;
 	wc.lpfnWndProc=MainWinProc;

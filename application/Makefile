@@ -13,10 +13,12 @@ TARGET = app.exe
 APP_SRC = application.c
 WIN_SRC = $(SRC_DIR)/mainwindow.c
 WIN_HEADER = $(SRC_DIR)/mainwindow.h
+DIG_SRC = $(SRC_DIR)/digproc.c
+DIG_HEADER = $(SRC_DIR)/digproc.h
 RC_SRC = $(RES_DIR)/source.rc
 
 # Объектные файлы
-OBJ = $(APP_SRC:.c=.o) $(WIN_SRC:.c=.o) $(RES)
+OBJ = $(APP_SRC:.c=.o) $(WIN_SRC:.c=.o) $(DIG_SRC:.c=.o) $(RES)
 
 # Правила
 all: $(TARGET)

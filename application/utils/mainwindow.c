@@ -1,6 +1,9 @@
 #include <windows.h>
+#include "digproc.h"
 #define ID_MYBUTTON 1
+
 LRESULT CALLBACK MainWinProc(HWND hw, UINT msg, WPARAM wp, LPARAM lp) {
+	extern HINSTANCE h;
 	switch (msg) {
 	case WM_CREATE:
 		CreateWindow(
@@ -20,14 +23,14 @@ LRESULT CALLBACK MainWinProc(HWND hw, UINT msg, WPARAM wp, LPARAM lp) {
 		return 0;
 	case WM_COMMAND:
 		if (HIWORD(wp)==0) {
-			char buf[256];
+			extern char buf[256];
 			switch (LOWORD(wp)) {
-			case 6:  /* команда меню Exit */
+			case 6:  // команда меню Exit (6 id в ресурсах)
 				PostQuitMessage(0);
 				break;
-			default: /* все остальные команды */
+			default: // все остальные команды
 				wsprintf(buf,"Command code: %d",LOWORD(wp));
-				MessageBox(hw,buf,"MessageBox",MB_OK|MB_ICONINFORMATION);
+				DialogBox(h,"Ex4_Dlg",hw,DlgProc);
 			}
 		}
    return 0;
